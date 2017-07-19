@@ -1,5 +1,6 @@
 package com.datastructures;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -30,7 +31,52 @@ public class LinkedListTest {
 
     @Test
     public void return_size_0_if_linkedList_is_empty() {
-        final List<Integer> list = new LinkedList<>();
-        assertEquals( 0, list.size() );
+        assertEquals( 0, new LinkedList<>().size() );
     }
+
+    @Test
+    public void isEmpty_return_true_if_element_not_present() {
+        final LinkedList<String> list = new LinkedList<>();
+        assertEquals( true, list.isEmpty() );
+    }
+
+    @Test
+    public void isEmpty_return_false_if_element_present() {
+        final LinkedList<String> list = new LinkedList<>();
+        list.add( "dummy string" );
+        assertEquals( false, list.isEmpty() );
+    }
+
+    @Test
+    public void returns_true_if_element_is_present() {
+        final LinkedList<String> list = new LinkedList<>();
+        list.add( "A" );
+        list.add( "B" );
+        list.add( "C" );
+        list.add( "D" );
+        list.add( "E" );
+
+        Assert.assertEquals( true, list.contains( "B" ) );
+    }
+
+    @Test
+    public void returns_false_if_element_not_present() {
+        final LinkedList<String> list = new LinkedList<>();
+        list.add( "A" );
+        list.add( "B" );
+
+        Assert.assertEquals( false, list.contains( "C" ) );
+    }
+
+    @Test
+    public void remove_from_list() {
+        final LinkedList<String> list = new LinkedList<>();
+        list.add( "A" );
+        list.add( "B" );
+        list.add( "C" );
+        list.add( "D" );
+
+        Assert.assertEquals( true, list.remove( "B" ) );
+    }
+
 }

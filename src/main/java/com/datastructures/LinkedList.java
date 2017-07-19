@@ -1,9 +1,6 @@
 package com.datastructures;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 class LinkedList<E> implements List<E> {
 
@@ -20,22 +17,32 @@ class LinkedList<E> implements List<E> {
     }
 
     @Override public boolean isEmpty() {
-        return false;
+        return head == null;
     }
 
     @Override public boolean contains( Object o ) {
+        Node current = head;
+        while ( current != null ) {
+            if ( Objects.equals( current.data, o ) ) {
+                return true;
+            }
+            current = current.link;
+        }
         return false;
     }
 
     @Override public Iterator<E> iterator() {
+        // TODO Default implementation
         return null;
     }
 
     @Override public Object[] toArray() {
+        // TODO Default implementation
         return new Object[0];
     }
 
     @Override public <T> T[] toArray( T[] a ) {
+        // TODO Default implementation
         return null;
     }
 
@@ -56,26 +63,45 @@ class LinkedList<E> implements List<E> {
     }
 
     @Override public boolean remove( Object o ) {
+        Node current = head;
+        Node previous = null;
+        while ( current != null ) {
+            if ( Objects.equals( current.data, o ) ) {
+                if ( previous == null ) {
+                    head = head.link;
+                } else {
+                    previous.link = current.link;
+                }
+                return true;
+            }
+            previous = current;
+            current = current.link;
+        }
         return false;
     }
 
     @Override public boolean containsAll( Collection<?> c ) {
+        // TODO Default implementation
         return false;
     }
 
     @Override public boolean addAll( Collection<? extends E> c ) {
+        // TODO Default implementation
         return false;
     }
 
     @Override public boolean addAll( int index, Collection<? extends E> c ) {
+        // TODO Default implementation
         return false;
     }
 
     @Override public boolean removeAll( Collection<?> c ) {
+        // TODO Default implementation
         return false;
     }
 
     @Override public boolean retainAll( Collection<?> c ) {
+        // TODO Default implementation
         return false;
     }
 
@@ -118,6 +144,7 @@ class LinkedList<E> implements List<E> {
     }
 
     @Override public ListIterator<E> listIterator( int index ) {
+        Comparator[] comparator = new Comparator[10];
         return null;
     }
 
