@@ -2,6 +2,8 @@
 
 [![Release](https://jitpack.io/v/SwapnilBGaikwad/DataStructures.svg)](https://jitpack.io/#SwapnilBGaikwad/DataStructures)
 
+![Downloads](https://jitpack.io/v/SwapnilBGaikwad/DataStructures/month.svg)
+
 # Collection implemented
 
  * Data structures in Java

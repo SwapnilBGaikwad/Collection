@@ -1,5 +1,7 @@
 package com.datastructures;
 
+import java.util.HashMap;
+
 public class Trie {
     private Node head;
 
@@ -50,30 +52,26 @@ public class Trie {
     }
 
     private void toString(StringBuilder result, Node current) {
-        for (int i = 0; i < 26; i++) {
-            if (current.children[i] != null) {
-                char ch = (char) (i + 97);
-                result.append(ch).append(" ");
-                toString(result, current.children[i]);
-            }
+        for (Character ch : current.children.keySet()) {
+            result.append(ch).append(" ");
+            toString(result, current.getChild(ch));
         }
         result.append("\t");
     }
 
     private class Node {
-        private final Node[] children = new Node[26];
+        private final HashMap<Character, Node> children;
 
-        private int getChildrenIndex(char ch) {
-            return ch - 97;
+        public Node() {
+            children = new HashMap<>();
         }
 
         public void addChild(char current) {
-            int index = getChildrenIndex(current);
-            children[index] = new Node();
+            children.put(current, new Node());
         }
 
         public Node getChild(char aChar) {
-            return children[getChildrenIndex(aChar)];
+            return children.get(aChar);
         }
     }
 }
