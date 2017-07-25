@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/SwapnilBGaikwad/DataStructures.png)](https://travis-ci.org/SwapnilBGaikwad/DataStructures)
+[![Build Status](https://travis-ci.org/SwapnilBGaikwad/Collection.png)](https://travis-ci.org/SwapnilBGaikwad/DataStructures)
 
-[![Release](https://jitpack.io/v/SwapnilBGaikwad/DataStructures.svg)](https://jitpack.io/#SwapnilBGaikwad/DataStructures)
+[![Release](https://jitpack.io/v/SwapnilBGaikwad/Collection.svg)](https://jitpack.io/#SwapnilBGaikwad/DataStructures)
 
-![Downloads](https://jitpack.io/v/SwapnilBGaikwad/DataStructures/month.svg)
+![Downloads](https://jitpack.io/v/SwapnilBGaikwad/Collection/month.svg)
 
 # Collection implemented
 
