@@ -9,7 +9,7 @@
 ![Downloads](https://jitpack.io/v/SwapnilBGaikwad/Collection/month.svg)
 
 
-###Data structures library in Java
+###Data structures library in Java <br/>
 ***Author : Swapnil Gaikwad*** <br />
 
 ## <a name="background"></a>Background
@@ -65,6 +65,7 @@ dependencies {
     * Linked List
     * Heap
     * Trie
+    * Queue
 
 
 
