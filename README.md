@@ -6,7 +6,7 @@
 
 [![Release](https://jitpack.io/v/SwapnilBGaikwad/Collection.svg)](https://jitpack.io/#SwapnilBGaikwad/Collection)
 
-[![Downloads](https://jitpack.io/v/SwapnilBGaikwad/Collection/month.svg)]()
+[![Downloads](https://jitpack.io/v/SwapnilBGaikwad/Collection/month.svg)](https://github.com/SwapnilBGaikwad/Collection/)
 
 
 ###Data structures library in Java <br/>
