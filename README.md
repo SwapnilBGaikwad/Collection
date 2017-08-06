@@ -2,11 +2,11 @@
 
 ## Build status:
 
-[![Build Status](https://travis-ci.org/SwapnilBGaikwad/Collection.png)](https://travis-ci.org/SwapnilBGaikwad/DataStructures)
+[![Build Status](https://travis-ci.org/SwapnilBGaikwad/Collection.png)](https://travis-ci.org/SwapnilBGaikwad/Collection)
 
-[![Release](https://jitpack.io/v/SwapnilBGaikwad/Collection.svg)](https://jitpack.io/#SwapnilBGaikwad/DataStructures)
+[![Release](https://jitpack.io/v/SwapnilBGaikwad/Collection.svg)](https://jitpack.io/#SwapnilBGaikwad/Collection)
 
-![Downloads](https://jitpack.io/v/SwapnilBGaikwad/Collection/month.svg)
+[![Downloads](https://jitpack.io/v/SwapnilBGaikwad/Collection/month.svg)]()
 
 
 ###Data structures library in Java <br/>
