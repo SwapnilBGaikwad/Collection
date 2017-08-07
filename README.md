@@ -9,7 +9,7 @@
 [![Downloads](https://jitpack.io/v/SwapnilBGaikwad/Collection/month.svg)](https://github.com/SwapnilBGaikwad/Collection/)
 
 
-###Data structures library in Java <br/>
+## Data structures library in Java <br/>
 ***Author : Swapnil Gaikwad*** <br />
 
 ## <a name="background"></a>Background
