@@ -17,11 +17,9 @@
 **Java Collections** are extremely common in Java projects. It is a great tool for storing and retrieving data efficiently for application.
 This project is similar implementation of Java Collection just to understand how data structures can be implemented in Java.
 This project help understand how Java collections work under the hood.
-This project also provide data structures like Trie. 
+This project also provide data structures like Trie. This classes has similar API's to Java Collections.
 
-## <a name="howto"></a>How to use AutoValue
-
-This classes has similar API's to Java Collections.
+## <a name="howto"></a>How to use Collection in your Project
 
 ### In `pom.xml`
 **To get a Git project into your build**<br/>
