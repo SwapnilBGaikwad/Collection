@@ -16,8 +16,8 @@ public class TreeTest {
         tree.add( 2 );
         tree.add( 1 );
 
-        assertEquals( true, tree.find( 2 ) );
-        assertEquals( false, tree.find( 5 ) );
+        assertEquals( true, tree.contains( 2 ) );
+        assertEquals( false, tree.contains( 5 ) );
     }
 
     @Test
@@ -30,12 +30,12 @@ public class TreeTest {
         tree.add( 1 );
         tree.add( 3 );
 
-        List<Integer> list = Arrays.asList( 8, 7, 2, 1, 3 );
+        List<Integer> list = Arrays.asList( 4, 8, 7, 2, 1, 3 );
         list.forEach( element -> {
             System.out.println( element );
-            assertEquals( true, tree.find( element ) );
+            assertEquals( true, tree.contains( element ) );
             assertEquals( true, tree.remove( element ) );
-            assertEquals( false, tree.find( element ) );
+            assertEquals( false, tree.contains( element ) );
         } );
     }
 }

@@ -33,11 +33,11 @@ public class Tree<E extends Comparable<E>> {
         }
     }
 
-    public boolean find( E data ) {
-        return find( data, root );
+    public boolean contains( E data ) {
+        return contains( data, root );
     }
 
-    private boolean find( E data, Node root ) {
+    private boolean contains( E data, Node root ) {
         if ( root == null ) {
             return false;
         }
@@ -45,78 +45,47 @@ public class Tree<E extends Comparable<E>> {
             return true;
         }
         if ( data.compareTo( root.data ) < 0 ) {
-            return find( data, root.left );
+            return contains( data, root.left );
         } else {
-            return find( data, root.right );
+            return contains( data, root.right );
         }
     }
 
     public boolean remove( E data ) {
-        if ( root.data == data ) {
-            return false;
-        }
-        Node parent = findParent( root, data );
-        if ( parent == null ) {
-            return false;
-        }
-        Node current;
-        if ( parent.left != null && parent.left.data == data ) {
-            current = parent.left;
-        } else {
-            current = parent.right;
-        }
-        remove( parent, current );
-        return true;
+        final boolean isPresent = contains( data );
+        root = remove( root, data );
+        return isPresent;
     }
 
-    private void remove( Node parent, Node current ) {
-        if ( current.isLeaf() ) {
-            if ( parent.left == current ) {
-                parent.left = null;
-            } else {
-                parent.right = null;
-            }
-            return;
-        }
-        if ( current.left == null ) {
-            if ( parent.left == current ) {
-                parent.left = current.right;
-            } else {
-                parent.right = current.right;
-            }
-            return;
-        }
-        if ( current.right == null ) {
-            if ( parent.left == current ) {
-                parent.left = current.left;
-            } else {
-                parent.right = current.left;
-            }
-            return;
-        }
-        Node itr = current.right;
-        parent = current;
-        while ( itr.left != null ) {
-            parent = itr;
-            itr = itr.left;
-        }
-        current.data = itr.data;
-        remove( parent, itr );
-    }
-
-    private Node findParent( Node current, E data ) {
-        if ( current == null || current.data == data ) {
+    private Node remove( Node root, E data ) {
+        // If tree is not empty
+        if ( root == null ) {
             return null;
         }
-        if ( current.left != null && current.left.data == data ) {
-            return current;
-        } else if ( current.right != null && current.right.data == data ) {
-            return current;
-        } else if ( data.compareTo( current.data ) < 0 ) {
-            return findParent( current.left, data );
+
+        if ( data.compareTo( root.data ) < 0 ) {
+            root.left = remove( root.left, data );
+        } else if ( data.compareTo( root.data ) > 0 ) {
+            root.right = remove( root.right, data );
         } else {
-            return findParent( current.right, data );
+            if ( root.left == null ) {
+                return root.right;
+            }
+            if ( root.right == null ) {
+                return root.left;
+            }
+            //Element found
+            root.data = minValue( root.right );
+            root.right = remove( root.right, root.data );
         }
+        return root;
+    }
+
+    private E minValue( Node root ) {
+        while ( root.left != null ) {
+            root = root.left;
+        }
+        return root.data;
     }
 
     private class Node {
