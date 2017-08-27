@@ -4,6 +4,8 @@
 
 [![Build Status](https://travis-ci.org/SwapnilBGaikwad/Collection.png)](https://travis-ci.org/SwapnilBGaikwad/Collection)
 
+[![codecov](https://codecov.io/gh/SwapnilBGaikwad/Collection/branch/master/graph/badge.svg)](https://codecov.io/gh/SwapnilBGaikwad/Collection)
+
 [![Release](https://jitpack.io/v/SwapnilBGaikwad/Collection.svg)](https://jitpack.io/#SwapnilBGaikwad/Collection)
 
 [![Downloads](https://jitpack.io/v/SwapnilBGaikwad/Collection/month.svg)](https://github.com/SwapnilBGaikwad/Collection/)
