@@ -1,4 +1,4 @@
-group 'com.datastructures'
+group 'com.collection'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
