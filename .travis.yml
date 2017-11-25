@@ -14,7 +14,5 @@ script:
   - ./gradlew check
   - ./gradlew jacocoTestReport
 after_success:
-  - echo 'Uploading the test coverage reports to codecov'
   - bash <(curl -s https://codecov.io/bash)
-  - echo 'Done uploading the test coverage reports to codecov'
   - echo 'Happy Coding'
