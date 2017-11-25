@@ -9,69 +9,60 @@ public class Trie {
         head = new Node();
     }
 
-    public void add(String value) {
-        add(value, 0, head);
-    }
-
-    private void add(String value, int index, Node current) {
-        if (value.length() == index) {
-            return;
-        }
-        char aChar = value.charAt(index);
-        Node child = current.getChild(aChar);
-        if (child != null) {
-            add(value, index + 1, child);
-        } else {
-            current.addChild(aChar);
-            add(value, index + 1, current.getChild(aChar));
+    public void add( String value ) {
+        Node current = head;
+        for ( char aChar : value.toCharArray() ) {
+            final Node child = current.getChild( aChar );
+            if ( child == null ) {
+                current.addChild( aChar );
+                current = current.getChild( aChar );
+            } else {
+                current = child;
+            }
         }
     }
 
-    public boolean find(String value) {
-        return find(value, 0, head);
-    }
-
-    private boolean find(String value, int index, Node current) {
-        if (value.length() == index) {
-            return true;
+    public boolean find( String value ) {
+        Node current = head;
+        for ( char aChar : value.toCharArray() ) {
+            final Node child = current.getChild( aChar );
+            if ( child == null ) {
+                return false;
+            }
+            current = child;
         }
-        char aChar = value.charAt(index);
-        Node child = current.getChild(aChar);
-        if (child == null) {
-            return false;
-        }
-        return find(value, index + 1, child);
+        return true;
     }
 
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
         Node current = head;
-        toString(result, current);
+        toString( result, current );
         return result.toString();
     }
 
-    private void toString(StringBuilder result, Node current) {
-        for (Character ch : current.children.keySet()) {
-            result.append(ch).append(" ");
-            toString(result, current.getChild(ch));
+    private void toString( StringBuilder result, Node current ) {
+        for ( Character ch : current.children.keySet() ) {
+            result.append( ch ).append( " " );
+            toString( result, current.getChild( ch ) );
         }
-        result.append("\t");
+        result.append( "\t" );
     }
 
     private class Node {
         private final HashMap<Character, Node> children;
 
-        public Node() {
+        Node() {
             children = new HashMap<>();
         }
 
-        public void addChild(char current) {
-            children.put(current, new Node());
+        void addChild( char current ) {
+            children.put( current, new Node() );
         }
 
-        public Node getChild(char aChar) {
-            return children.get(aChar);
+        Node getChild( char aChar ) {
+            return children.get( aChar );
         }
     }
 }
