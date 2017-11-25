@@ -57,4 +57,17 @@ public class QueueTest {
         exception.expectMessage( "Queue is empty" );
         queue.element();
     }
+
+    @Test
+    public void isEmpty_returns_false_if_element_in_queue() {
+        queue.add( 1 );
+        queue.add( 2 );
+
+        assertEquals( false, queue.isEmpty() );
+    }
+
+    @Test
+    public void isEmpty_returns_true_if_element_not_in_queue() {
+        assertEquals( true, queue.isEmpty() );
+    }
 }
